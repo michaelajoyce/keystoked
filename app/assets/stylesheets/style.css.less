@@ -1,0 +1,109 @@
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
+
+
+html {
+	height: 100%;
+}
+
+body {
+}
+
+.navbar {
+	background: #000;
+	.container {
+		width: 940px;
+	}
+	h1 {
+		color: #fff;
+		font-size: 26px;
+		font-weight: normal;
+		letter-spacing: 5px;
+		line-height: 30px;
+	}
+}
+
+#ticker {
+	font-size: 22px;
+	text-align: center;
+}
+
+#keyboard {
+  .border-radius(10px);
+	padding: 0 44px;
+	position: absolute;
+	bottom: 20px;
+	width: 1352px;
+	margin: 0 auto;
+	.span12 {
+		width: auto;
+	}
+  .row + .row {
+    margin-top: 15px;
+  }
+  button {
+		background-color: rgba(64, 64, 64, .3);
+    .border-radius(5px);
+		border: none;
+		.box-shadow(2px 2px 5px #333);
+		font: 18px/24px Helvetica Neue;
+    width: 80px;
+    height: 70px;
+    text-transform: uppercase;
+		-webkit-transition: all .5s;
+  }
+  button + button {
+    margin-left: 10px;
+  }
+
+  button.tab, button.delete, button.caps-lock, button.return, button.shift {
+    padding-top: 35px;
+		padding-left: 10px;
+    text-transform: lowercase;
+    text-align: left;
+  }
+  button.tab, button.delete {
+    width: 130px;
+  }
+  button.caps-lock, button.return {
+    width: 152px;
+  }
+  button.shift {
+    width: 199px;
+  }
+  button.delete, button.return, button + button.shift {
+		padding-right: 10px;
+    text-align: right;
+  }
+	button.space {
+		margin-left: 402px;
+		width: 456px;
+	}
+  button.highlight {
+		background-color: rgba(128, 128, 128, 1);
+		/*
+		&.p {
+			background-color: rgba(255, 105, 180, 1);
+		}
+		&.r {
+			background-color: rgba(255, 0, 0, 1);
+			color: #fff;
+		}
+		&.m {
+			background-color: rgba(128, 0, 0, 1);
+			color: #fff;
+		}
+		&.i {
+			background-color: rgba(75, 0, 130, 1);
+			color: #fff;
+		}
+		&.t {
+			background-color: rgba(64, 224, 204, 1);
+		}
+		*/
+  }
+}
+
+#text-modal {
+	display: none;
+}

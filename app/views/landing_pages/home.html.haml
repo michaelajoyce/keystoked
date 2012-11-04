@@ -1,0 +1,91 @@
+= content_for :body_js do
+  :javascript
+    $(function() {
+      ks.init();
+    });
+
+.navbar
+  .container
+    %h1 keystoked
+#ticker
+
+.pull-right
+  =link_to 'import text', '#text-modal', { role: 'button', class: 'btn', data: { toggle: 'modal' } }
+#keyboard.container
+  .row
+    .span12
+      %button.192.p ~<br />`
+      %button.49.p !<br >1
+      %button.50.r @<br >2
+      %button.51.m #<br >3
+      %button.52.i $<br >4
+      %button.53.i %<br >5
+      %button.54.i ^<br >6
+      %button.55.i &<br >7
+      %button.56.m *<br >8
+      %button.57.r (<br >9
+      %button.48.p )<br >0
+      %button.189.p _<br >-
+      %button.187.p +<br >=
+      %button.8.delete.p delete
+  .row
+    .span12
+      %button.9.tab.p tab
+      %button.81.p q
+      %button.87.r w
+      %button.69.m e
+      %button.82.i r
+      %button.84.i t
+      %button.89.i y
+      %button.85.i u
+      %button.73.m i
+      %button.79.r o
+      %button.80.p p
+      %button.219.p {<br />[
+      %button.221.p }<br />]
+      %button.220.p |<br />\
+  .row
+    .span12
+      %button.20.caps-lock.p caps lock
+      %button.65.p a
+      %button.83.r s
+      %button.68.m d
+      %button.70.i f
+      %button.71.i g
+      %button.72.i h
+      %button.74.i j
+      %button.75.m k
+      %button.76.r l
+      %button.186.p :<br />;
+      %button.222.p "<br />'
+      %button.13.return.p return
+  .row
+    .span12
+      %button.16.1.shift.p shift
+      %button.90.p z
+      %button.88.r x
+      %button.67.m c
+      %button.86.i v
+      %button.66.i b
+      %button.78.i n
+      %button.77.i m
+      %button.188.m <<br />,
+      %button.190.r ><br />.
+      %button.191.p ?<br />/
+      %button.16.2.shift.p shift
+  .row
+    .span12
+      %button.32.t.space
+  #text-modal.modal{tabindex:'-1', role: 'dialog', 'aria-labelledby' => 'myModalLabel', 'aria-hidden' => 'true'}
+    .modal-header
+      %h1 Upload a text
+    .modal-body
+      = form_for ::Text.new, html: { multipart: true }, remote: true do |f|
+        %fieldset.pull-left
+          = f.label :title
+          = f.text_field :title
+        %fieldset.pull-right
+          = f.file_field :body
+        %fieldset
+          = f.submit
+    .modal-footer
